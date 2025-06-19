@@ -1,6 +1,4 @@
-const {
-  createBook, getAllBook, getDetailBook, updateBook, deleteBook,
-} = require('./book.controller');
+import { createBook, getAllBook, getDetailBook, updateBook, deleteBook } from './book.controller.js';
 
 const routes = [
   {
@@ -30,4 +28,4 @@ const routes = [
   },
 ];
 
-module.exports = routes;
+export default routes;

@@ -1,9 +1,10 @@
-const hapi = require('@hapi/hapi');
-const routes = require('./modules/books/book.routes');
+import { server as _server } from '@hapi/hapi';
+import routes from './modules/books/book.routes.js';
+const PORT = 9000
 
 const init = async () => {
-  const server = hapi.server({
-    port: 5000,
+  const server = _server({
+    port: PORT,
     host: 'localhost',
     routes: {
       cors: {
@@ -15,7 +16,7 @@ const init = async () => {
   server.route(routes);
 
   await server.start();
-  console.log('app listen to port 5000');
+  console.log(`app listen to port ${PORT}`);
 };
 
 init();
